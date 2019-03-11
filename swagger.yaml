@@ -1,0 +1,153 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: CustomerOSB
+  description: OSB Service
+  contact: {}
+host: '144.21.68.125:80'
+basePath: /testapirest
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /update:
+    post:
+      summary: Update Customer
+      tags:
+        - Update Customer
+      operationId: ExecutePost
+      produces:
+        - application/json
+      parameters:
+        - name: Body
+          in: body
+          required: true
+          description: ''
+          schema:
+            $ref: '#/definitions/RequestMessage'
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/ReplyMessage'
+definitions:
+  CustomerDataType:
+    title: CustomerDataType
+    description: ''
+    type: object
+    properties:
+      CustomerId:
+        description: ''
+        type: string
+      CustomerName:
+        description: ''
+        type: string
+      Type:
+        description: ''
+        type: string
+      Description:
+        description: ''
+        type: string
+      Address:
+        description: ''
+        type: string
+      City:
+        description: ''
+        type: string
+      State:
+        description: ''
+        type: string
+      Zip:
+        description: ''
+        type: string
+      Country:
+        description: ''
+        type: string
+      Phone:
+        description: ''
+        type: string
+      Status:
+        description: ''
+        type: string
+      CreditRating:
+        description: ''
+        type: string
+      Discount:
+        description: ''
+        type: string
+      Terms:
+        description: ''
+        type: string
+      EnrollDate:
+        description: ''
+        type: string
+      LastOrderDate:
+        description: ''
+        type: string
+      Currency:
+        description: ''
+        type: string
+      ContactName:
+        description: ''
+        type: string
+      ContactTitle:
+        description: ''
+        type: string
+      ContactPhone:
+        description: ''
+        type: string
+      AccountRep:
+        description: ''
+        type: string
+      CampaignRating:
+        description: ''
+        type: string
+      ReferedBy:
+        description: ''
+        type: string
+    required:
+      - CustomerId
+      - CustomerName
+      - Type
+      - Description
+      - Address
+      - City
+      - State
+      - Zip
+      - Country
+      - Phone
+      - Status
+      - CreditRating
+      - Discount
+      - Terms
+      - EnrollDate
+      - LastOrderDate
+      - Currency
+      - ContactName
+      - ContactTitle
+      - ContactPhone
+      - AccountRep
+      - CampaignRating
+      - ReferedBy
+  ReplyMessage:
+    title: replyMessage
+    type: object
+    properties:
+      CustomerData:
+        $ref: '#/definitions/CustomerDataType'
+    required:
+      - CustomerData
+  RequestMessage:
+    title: requestMessage
+    type: object
+    properties:
+      CustomerData:
+        $ref: '#/definitions/CustomerDataType'
+    required:
+      - CustomerData
+tags:
+  - name: Update Customer
+    description: ''
