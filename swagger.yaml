@@ -5,7 +5,7 @@ info:
   description: OSB Service
   contact: {}
 host: '144.21.68.125:80'
-basePath: /testapirest
+basePath: /customerrestapi
 schemes:
   - http
 consumes:
